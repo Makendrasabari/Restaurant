@@ -166,7 +166,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-    padding: 3.5rem 0;
+    scroll-margin-top: 80px; /* Offset for fixed header */
+    padding: 2rem 0;
     position: relative;
 }
 
@@ -444,10 +445,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section 1: Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 80px;
+    padding-bottom: 40px;
     background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
@@ -653,6 +655,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .special-card:hover {
@@ -707,6 +712,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .special-info {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .special-meta {
@@ -741,6 +749,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     border-top: 1px solid var(--border-color);
     padding-top: 1.25rem;
+    margin-top: auto;
 }
 
 .special-rating {
@@ -1403,61 +1412,94 @@ textarea.form-control {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 1rem;
+    padding: 3rem 1.5rem;
     background-color: var(--bg-primary);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .error-container {
-    max-width: 600px;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-logo-wrapper {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.error-logo-wrapper .logo-img {
+    height: 32px;
+}
+
+.error-icon-illustration {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floating 3.5s ease-in-out infinite;
+}
+
+.error-icon-illustration svg {
+    width: 96px;
+    height: 96px;
+    transition: var(--transition-smooth);
 }
 
 .error-badge {
     font-family: var(--font-heading);
-    font-size: 8rem;
-    font-weight: 900;
+    font-size: 6rem;
+    font-weight: 800;
     color: var(--accent-terracotta);
-    line-height: 1;
-    margin-bottom: 1.5rem;
+    line-height: 0.95;
+    margin-bottom: 0.5rem;
     position: relative;
     display: inline-block;
+    letter-spacing: -0.02em;
+    transition: var(--transition-smooth);
 }
 
 .error-badge::after {
     content: '404';
     position: absolute;
-    left: 4px;
-    top: 4px;
-    color: rgba(129, 145, 127, 0.15);
+    left: 3px;
+    top: 3px;
+    color: rgba(129, 145, 127, 0.12);
     z-index: -1;
 }
 
 .error-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: var(--transition-smooth);
 }
 
 .error-desc {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-    max-width: 500px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 440px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.error-icon-illustration {
-    font-size: 4rem;
-    color: var(--accent-sage);
-    margin-bottom: 2rem;
-    animation: floating 3s ease-in-out infinite;
+    transition: var(--transition-smooth);
 }
 
 @keyframes floating {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
@@ -1671,6 +1713,29 @@ textarea.form-control {
         max-width: 400px;
         margin: 0 auto;
     }
+
+    /* Error Page Tablet Responsive Adjustments */
+    .error-logo-wrapper {
+        margin-bottom: 1.25rem;
+    }
+    .error-logo-wrapper .logo-img {
+        height: 28px;
+    }
+    .error-icon-illustration svg {
+        width: 84px;
+        height: 84px;
+    }
+    .error-badge {
+        font-size: 5rem;
+    }
+    .error-title {
+        font-size: 1.85rem;
+    }
+    .error-desc {
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+        max-width: 380px;
+    }
 }
 
 /* SMARTPHONE BREAKPOINT */
@@ -1771,5 +1836,32 @@ textarea.form-control {
     
     .special-info {
         padding: 1.5rem;
+    }
+    
+    /* Error Page Smartphone Responsive Adjustments */
+    .error-page {
+        padding: 2rem 1rem;
+    }
+    .error-logo-wrapper {
+        margin-bottom: 1rem;
+    }
+    .error-logo-wrapper .logo-img {
+        height: 26px;
+    }
+    .error-icon-illustration svg {
+        width: 76px;
+        height: 76px;
+    }
+    .error-badge {
+        font-size: 4.25rem;
+    }
+    .error-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    .error-desc {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        max-width: 300px;
     }
 }

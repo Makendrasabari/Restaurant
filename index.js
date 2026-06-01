@@ -134,27 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Collect Form Values (Mock submission)
             const submitBtn = reservationForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
             
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Checking availability...';
             
             setTimeout(() => {
-                // Since this is a home page booking form, we mock a premium alert confirmation
-                submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Booking Request Sent!';
-                submitBtn.style.backgroundColor = 'var(--accent-terracotta)';
-                submitBtn.style.borderColor = 'var(--accent-terracotta)';
-                
-                alert('Thank you! Your table reservation request has been received. We will contact you shortly to confirm.');
-                reservationForm.reset();
-                
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.backgroundColor = '';
-                    submitBtn.style.borderColor = '';
-                }, 3000);
-            }, 1500);
+                if (loader) {
+                    loader.classList.remove('fade-out');
+                    setTimeout(() => {
+                        window.location.href = '404.html';
+                    }, 500);
+                } else {
+                    window.location.href = '404.html';
+                }
+            }, 1000);
         });
     }
 
