@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Stackly</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Page Loader Screen -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-logo-wrapper">
+            <img class="loader-logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+        </div>
+    </div>
+
+    <div class="error-page">
+        <div class="error-container" data-aos="zoom-in" data-aos-duration="800">
+            <!-- Dynamic SVG Logo -->
+            <div style="margin-bottom: 3rem; display: flex; justify-content: center;">
+                <a href="index.html" class="logo" aria-label="Stackly Logo">
+                    <img class="logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+                </a>
+            </div>
+
+            <!-- Plate/Fork/Spoon Floating Illustration -->
+            <div class="error-icon-illustration">
+                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto;">
+                    <!-- Outer plate rim -->
+                    <circle cx="50" cy="50" r="42" stroke="var(--border-color)" stroke-width="4" stroke-dasharray="6 4" />
+                    <!-- Inner plate rim -->
+                    <circle cx="50" cy="50" r="32" stroke="var(--accent-sage)" stroke-width="2" />
+                    <!-- Fork -->
+                    <path d="M 32 30 L 32 50 M 28 30 L 28 42 M 36 30 L 36 42 M 32 50 L 32 70" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round" />
+                    <!-- Knife -->
+                    <path d="M 68 30 L 68 70 M 68 30 C 68 30, 62 35, 62 48 L 68 48" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Crumb dots (representing eaten food) -->
+                    <circle cx="48" cy="42" r="2.5" fill="var(--accent-terracotta)" />
+                    <circle cx="54" cy="46" r="1.5" fill="var(--accent-honey)" />
+                    <circle cx="46" cy="52" r="2" fill="var(--accent-terracotta)" />
+                </svg>
+            </div>
+
+            <!-- Error message -->
+            <span class="error-badge">404</span>
+            <h1 class="error-title">Out of Stockly</h1>
+            <p class="error-desc">It looks like the page you are trying to reach was either cleared away, eaten by a hungry critic, or is still cooking in our kitchen.</p>
+            
+            <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Return to Homepage</a>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+</body>
+</html>

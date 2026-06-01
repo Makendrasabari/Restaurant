@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Stackly</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Page Loader Screen -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-logo-wrapper">
+            <img class="loader-logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+        </div>
+    </div>
+
+    <div class="auth-page">
+        <!-- Back to Home Link -->
+        <a href="index.html" class="auth-back-btn"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+        
+        <!-- Register Card -->
+        <div class="auth-card" data-aos="zoom-in" data-aos-duration="600">
+            <div class="auth-header">
+                <!-- Logo -->
+                <a href="index.html" class="logo" aria-label="Stackly Logo">
+                    <img class="logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+                </a>
+                <h2 class="auth-title">Create Account</h2>
+                <p class="auth-subtitle">Already have an account? <a href="login.html">Sign In</a></p>
+            </div>
+
+            <!-- Register Form (Redirects to 404.html after submission) -->
+            <form class="auth-form" action="404.html" method="GET">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password (min 6 characters)" minlength="6" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password" minlength="6" required>
+                </div>
+                
+                <div class="auth-checkbox-row">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required> I agree to the Terms & Privacy Policy
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+</body>
+</html>

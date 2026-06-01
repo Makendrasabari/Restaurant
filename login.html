@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Stackly</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Page Loader Screen -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-logo-wrapper">
+            <img class="loader-logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+        </div>
+    </div>
+
+    <div class="auth-page">
+        <!-- Back to Home Link -->
+        <a href="index.html" class="auth-back-btn"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+        
+        <!-- Login Card -->
+        <div class="auth-card" data-aos="zoom-in" data-aos-duration="600">
+            <div class="auth-header">
+                <!-- Logo -->
+                <a href="index.html" class="logo" aria-label="Stackly Logo">
+                    <img class="logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
+                </a>
+                <h2 class="auth-title">Welcome Back</h2>
+                <p class="auth-subtitle">New to Stackly? <a href="register.html">Create an account</a></p>
+            </div>
+
+            <!-- Login Form (Redirects to 404.html after submission) -->
+            <form class="auth-form" action="404.html" method="GET">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+                <div class="auth-checkbox-row">
+                    <label class="checkbox-container">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="404.html" class="auth-forgot">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+</body>
+</html>
