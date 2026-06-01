@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account | Stackly</title>
+    <title>Error 400 | Stackly</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="index.css">
     <!-- AOS CSS -->
@@ -24,44 +24,39 @@
         </div>
     </div>
 
-    <div class="auth-page">
-        <!-- Back to Home Link -->
-        <a href="index.html" class="auth-back-btn"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
-        
-        <!-- Register Card -->
-        <div class="auth-card" data-aos="zoom-in" data-aos-duration="600">
-            <div class="auth-header">
-                <!-- Logo -->
+    <div class="error-page">
+        <div class="error-container" data-aos="zoom-in" data-aos-duration="800">
+            <!-- Dynamic SVG Logo -->
+            <div style="margin-bottom: 3rem; display: flex; justify-content: center;">
                 <a href="index.html" class="logo" aria-label="Stackly Logo">
                     <img class="logo-img" src="assets/images/logo.webp" alt="Stackly Logo">
                 </a>
-                <h2 class="auth-title">Create Account</h2>
-                <p class="auth-subtitle">Already have an account? <a href="login.html">Sign In</a></p>
             </div>
 
-            <!-- Register Form (Redirects to 404.html after submission) -->
-            <form class="auth-form" action="404.html" method="GET">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password (min 6 characters)" minlength="6" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Confirm Password" minlength="6" required>
-                </div>
-                
-                <div class="auth-checkbox-row">
-                    <label class="checkbox-container">
-                        <input type="checkbox" required> I agree to the Terms & Privacy Policy
-                    </label>
-                </div>
+            <!-- Plate/Fork/Spoon Floating Illustration -->
+            <div class="error-icon-illustration">
+                <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto;">
+                    <!-- Outer plate rim -->
+                    <circle cx="50" cy="50" r="42" stroke="var(--border-color)" stroke-width="4" stroke-dasharray="6 4" />
+                    <!-- Inner plate rim -->
+                    <circle cx="50" cy="50" r="32" stroke="var(--accent-sage)" stroke-width="2" />
+                    <!-- Fork -->
+                    <path d="M 32 30 L 32 50 M 28 30 L 28 42 M 36 30 L 36 42 M 32 50 L 32 70" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round" />
+                    <!-- Knife -->
+                    <path d="M 68 30 L 68 70 M 68 30 C 68 30, 62 35, 62 48 L 68 48" stroke="var(--text-secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Crumb dots (representing eaten food) -->
+                    <circle cx="48" cy="42" r="2.5" fill="var(--accent-terracotta)" />
+                    <circle cx="54" cy="46" r="1.5" fill="var(--accent-honey)" />
+                    <circle cx="46" cy="52" r="2" fill="var(--accent-terracotta)" />
+                </svg>
+            </div>
 
-                <button type="submit" class="btn btn-primary btn-submit">Sign Up</button>
-            </form>
+            <!-- Error message -->
+            <span class="error-badge">400</span>
+            <h1 class="error-title">Bad Request</h1>
+            <p class="error-desc">We couldn't process this request. The kitchen received an incomplete or bad order transmission.</p>
+            
+            <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Return to Homepage</a>
         </div>
     </div>
 

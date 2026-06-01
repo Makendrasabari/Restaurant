@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const hideLoader = () => {
             setTimeout(() => {
                 loader.classList.add('fade-out');
-            }, 300); // Short delay to let the initial animation play out
+            }, 350); // Elegant 350ms delay to make it snappier and suit the webpage
         };
 
         if (document.readyState === 'complete') {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!loader.classList.contains('fade-out')) {
                 loader.classList.add('fade-out');
             }
-        }, 3000);
+        }, 350);
     }
 
     // 1. Initialize Animate On Scroll (AOS)

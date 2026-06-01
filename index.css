@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-text {
-    fill: var(--text-primary);
+    fill: var(--accent-sage);
     font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -293,6 +293,10 @@ h1, h2, h3, h4, h5, h6 {
 .logo:hover .logo-s-bottom {
     fill: var(--accent-sage);
     transform: translateY(2px);
+}
+
+.logo:hover .logo-text {
+    fill: var(--accent-terracotta);
 }
 
 /* Navigation Menu */
@@ -372,16 +376,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background-color: var(--accent-sage);
-    color: var(--white);
-    border: 1px solid var(--accent-sage);
+    background: linear-gradient(135deg, #4ade80, #15803d);
+    color: #FAF8F5;
+    border: none;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
 }
 
 .btn-primary:hover {
-    background-color: var(--accent-sage-dark);
-    border-color: var(--accent-sage-dark);
+    background: linear-gradient(135deg, #15803d, #14532d);
+    color: #FAF8F5;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.3);
 }
 
 .btn-outline {
@@ -1158,7 +1163,7 @@ textarea.form-control {
 
 .footer-top {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr 1fr;
+    grid-template-columns: 1fr 0.8fr 1fr 1.2fr;
     gap: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(230, 226, 218, 0.1);
@@ -1561,7 +1566,7 @@ textarea.form-control {
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 3rem;
+        gap: 1.5rem;
     }
     
     .hero-content {
@@ -1587,7 +1592,7 @@ textarea.form-control {
     
     .about-grid, .tour-container, .reservation-wrapper {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 1.5rem;
     }
     
     .about-content {
@@ -1595,7 +1600,7 @@ textarea.form-control {
         padding-left: 0;
         text-align: center;
     }
-
+ 
     .about-quote {
         margin: 2rem auto;
         max-width: 500px;
@@ -1614,7 +1619,7 @@ textarea.form-control {
         grid-template-columns: 1fr;
         max-width: 500px;
         margin: 0 auto;
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 
     .specials-grid .special-card:nth-child(3),
