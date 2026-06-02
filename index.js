@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.toggle('open');
             navMenu.classList.toggle('open');
             document.body.classList.toggle('overflow-hidden'); // Prevent background scrolling
+            document.documentElement.classList.toggle('overflow-hidden');
         });
 
         // Close menu when clicking navigation links
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle.classList.remove('open');
                 navMenu.classList.remove('open');
                 document.body.classList.remove('overflow-hidden');
+                document.documentElement.classList.remove('overflow-hidden');
             });
         });
     }
@@ -131,13 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reservationForm) {
         reservationForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Collect Form Values (Mock submission)
             const submitBtn = reservationForm.querySelector('button[type="submit"]');
-            
+
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Checking availability...';
-            
+
             setTimeout(() => {
                 if (loader) {
                     loader.classList.remove('fade-out');
@@ -156,11 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navTransitionLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetUrl = link.getAttribute('href');
-            
+
             // Only intercept actual page navigation links (excluding hash links or empty attributes)
             if (targetUrl && targetUrl !== '#' && targetUrl !== 'javascript:void(0)' && !targetUrl.startsWith('#')) {
                 e.preventDefault();
-                
+
                 if (loader) {
                     loader.classList.remove('fade-out');
                     setTimeout(() => {
@@ -178,14 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
     authForms.forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const submitBtn = form.querySelector('button[type="submit"]');
-            
+
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing details...';
             }
-            
+
             setTimeout(() => {
                 if (loader) {
                     loader.classList.remove('fade-out');

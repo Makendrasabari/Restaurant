@@ -6,27 +6,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+    /* Gradient color variable (fresh green gradient) */
+    --gradient-primary: linear-gradient(135deg, #32D74B, #15803D);
+    --gradient-primary-hover: linear-gradient(135deg, #15803D, #064E3B);
     /* Color Palette (Slightly Darker & Richer Theme) */
-    --bg-primary: #EFECE6;       /* Slightly darker warm plaster */
-    --bg-secondary: #E7E3DA;     /* Darker warm limestone beige */
-    --bg-card: #FAF8F5;          /* Warm off-white card instead of pure white */
-    --text-primary: #1A1D1C;     /* Darker deep charcoal */
-    --text-secondary: #484E4B;   /* Darker muted slate grey */
-    --accent-sage: #667864;      /* Darker organic sage green */
+    --bg-primary: #EFECE6;
+    /* Slightly darker warm plaster */
+    --bg-secondary: #E7E3DA;
+    /* Darker warm limestone beige */
+    --bg-card: #FAF8F5;
+    /* Warm off-white card instead of pure white */
+    --text-primary: #1A1D1C;
+    /* Darker deep charcoal */
+    --text-secondary: #484E4B;
+    /* Darker muted slate grey */
+    --accent-sage: #667864;
+    /* Darker organic sage green */
     --accent-sage-dark: #4F5E4D;
-    --accent-terracotta: #B3685B; /* Darker, richer terracotta clay */
-    --accent-honey: #B88549;     /* Richer honey amber */
-    --border-color: #D3CDC2;     /* Darker beige border */
-    
+    --accent-terracotta: #B3685B;
+    /* Darker, richer terracotta clay */
+    --accent-honey: #B88549;
+    /* Richer honey amber */
+    --border-color: #D3CDC2;
+    /* Darker beige border */
+
     /* Layout & Shadows */
     --shadow-sm: 0 4px 12px rgba(44, 48, 46, 0.03);
     --shadow-md: 0 12px 32px rgba(44, 48, 46, 0.05);
     --shadow-lg: 0 20px 48px rgba(44, 48, 46, 0.08);
-    
+
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
-    
+
     /* Transitions (Targeted properties to avoid conflicting with AOS transforms and opacity animations) */
     --transition-smooth: color 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), fill 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, fill 0.25s ease, opacity 0.25s ease;
@@ -73,7 +85,10 @@ a {
     transition: var(--transition-fast);
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
     font-family: inherit;
 }
 
@@ -114,7 +129,8 @@ img {
     align-items: center;
 }
 
-.loader-logo-svg, .loader-logo-img {
+.loader-logo-svg,
+.loader-logo-img {
     width: 100%;
     height: auto;
 }
@@ -136,10 +152,12 @@ img {
         transform: scale(0.95);
         opacity: 0.7;
     }
+
     50% {
         transform: scale(1.05);
         opacity: 1;
     }
+
     100% {
         transform: scale(0.95);
         opacity: 0.7;
@@ -147,15 +165,28 @@ img {
 }
 
 /* Typography Helper Classes */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.25;
 }
 
-.text-accent-sage { color: var(--accent-sage); }
-.text-accent-terracotta { color: var(--accent-terracotta); }
-.text-accent-honey { color: var(--accent-honey); }
+.text-accent-sage {
+    color: var(--accent-sage);
+}
+
+.text-accent-terracotta {
+    color: var(--accent-terracotta);
+}
+
+.text-accent-honey {
+    color: var(--accent-honey);
+}
 
 /* Common Layout Components */
 .container {
@@ -166,7 +197,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-    scroll-margin-top: 80px; /* Offset for fixed header */
+    scroll-margin-top: 80px;
+    /* Offset for fixed header */
     padding: 2rem 0;
     position: relative;
 }
@@ -202,13 +234,16 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-sage);
 }
@@ -308,6 +343,10 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2.5rem;
 }
 
+.mobile-nav-logo {
+    display: none;
+}
+
 .nav-link {
     font-size: 0.95rem;
     font-weight: 500;
@@ -377,14 +416,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #4ade80, #15803d);
+    background: var(--gradient-primary);
     color: #FAF8F5;
     border: none;
     box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
 }
 
+/* Gradient button variant */
+.btn-gradient {
+    background: var(--gradient-primary);
+    color: #FAF8F5;
+    border: none;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.btn-gradient:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.3);
+}
+
 .btn-primary:hover {
-    background: linear-gradient(135deg, #15803d, #14532d);
+    background: var(--gradient-primary-hover);
     color: #FAF8F5;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(21, 128, 61, 0.3);
@@ -435,8 +489,10 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-.overflow-hidden {
+html.overflow-hidden,
+body.overflow-hidden {
     overflow: hidden !important;
+    height: 100% !important;
 }
 
 .display-none {
@@ -448,8 +504,8 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 80vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
-    padding-bottom: 40px;
+    padding-top: 140px;
+    padding-bottom: 60px;
     background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
@@ -595,7 +651,8 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.about-img-main img, .about-img-sub img {
+.about-img-main img,
+.about-img-sub img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -620,6 +677,11 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-top: 1.25rem;
+}
+
+.highlight-item:hover {
+    background: var(--gradient-primary);
+    color: var(--bg-primary);
 }
 
 .highlight-item h4 {
@@ -886,7 +948,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .play-btn i {
     font-size: 1.8rem;
-    margin-left: 5px; /* offset slightly for visual centering */
+    margin-left: 5px;
+    /* offset slightly for visual centering */
 }
 
 .play-btn:hover {
@@ -908,8 +971,9 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     margin-bottom: 1rem;
 }
-#tour{
-    overflow-x:hidden;
+
+#tour {
+    overflow-x: hidden;
 }
 
 .tour-feature-number {
@@ -1217,7 +1281,8 @@ textarea.form-control {
     transform: translateY(-3px);
 }
 
-.footer-links h4, .footer-newsletter h4 {
+.footer-links h4,
+.footer-newsletter h4 {
     font-family: var(--font-body);
     font-size: 1.05rem;
     font-weight: 700;
@@ -1498,9 +1563,52 @@ textarea.form-control {
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Gradient Action Buttons (Error/Secondary Pages) */
+.error-actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-gradient {
+    background: var(--gradient-primary) !important;
+    color: #FAF8F5 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(50, 215, 75, 0.3), 0 4px 15px rgba(21, 128, 61, 0.2) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-gradient:hover {
+    background: var(--gradient-primary-hover) !important;
+    color: #FAF8F5 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(50, 215, 75, 0.4), 0 8px 25px rgba(21, 128, 61, 0.3) !important;
+}
+
+.btn-gradient:active {
+    transform: translateY(1px) !important;
 }
 
 /* Mobile Responsive Adjustments */
@@ -1514,16 +1622,19 @@ textarea.form-control {
     .hero-title {
         font-size: 3.25rem;
     }
-    
+
     .hero-grid {
         gap: 2.5rem;
     }
-    
-    .about-grid, .tour-container, .reservation-wrapper {
+
+    .about-grid,
+    .tour-container,
+    .reservation-wrapper {
         gap: 1.5rem;
     }
-    
-    .reservation-details, .reservation-form-container {
+
+    .reservation-details,
+    .reservation-form-container {
         padding: 2rem;
     }
 
@@ -1532,7 +1643,7 @@ textarea.form-control {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-    
+
     /* Make the 3rd special card span full width for grid balance */
     .specials-grid .special-card:nth-child(3) {
         grid-column: span 2;
@@ -1566,89 +1677,113 @@ textarea.form-control {
     .menu-toggle {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 320px;
+        width: 100%;
         height: 100vh;
         background-color: rgba(250, 249, 246, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         padding: 4rem 3rem;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        box-shadow: none;
         transition: var(--transition-smooth);
         z-index: 1000;
-        gap: 1.5rem;
-        border-left: 1px solid var(--border-color);
+        gap: 2rem;
+        border-left: none;
     }
-    
+
     .nav-menu.open {
         right: 0;
     }
-    
-    .nav-actions {
-        display: none; /* Hide desktop actions */
+
+    .mobile-nav-logo {
+        display: block;
+        margin-bottom: 1.5rem;
+        width: 100%;
     }
-    
+
+    .mobile-nav-logo .logo {
+        justify-content: center;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-actions {
+        display: none;
+        /* Hide desktop actions */
+    }
+
     .nav-menu .nav-actions-mobile {
         display: flex !important;
         flex-direction: column;
         width: 100%;
+        max-width: 280px;
         gap: 1rem;
-        margin-top: 2rem;
+        margin: 2rem auto 0;
         border-top: 1px solid var(--border-color);
         padding-top: 2rem;
     }
-    
+
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 1.5rem;
     }
-    
+
     .hero-content {
         max-width: 100%;
         margin: 0 auto;
         order: 2;
     }
-    
+
     .hero-image-wrapper {
         order: 1;
         max-width: 480px;
         margin: 0 auto;
         width: 100%;
     }
-    
+
     .hero-image-container img {
         height: 380px;
     }
-    
+
     .hero-actions {
         justify-content: center;
     }
-    
-    .about-grid, .tour-container, .reservation-wrapper {
+
+    .about-grid,
+    .tour-container,
+    .reservation-wrapper {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .about-content {
         order: 2;
         padding-left: 0;
         text-align: center;
     }
- 
+
     .about-quote {
         margin: 2rem auto;
         max-width: 500px;
         text-align: left;
     }
-    
+
     .about-images {
         order: 1;
         height: 400px;
@@ -1656,8 +1791,9 @@ textarea.form-control {
         margin: 0 auto;
         width: 100%;
     }
-    
-    .specials-grid, .pillars-grid {
+
+    .specials-grid,
+    .pillars-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
         margin: 0 auto;
@@ -1669,7 +1805,7 @@ textarea.form-control {
         grid-column: span 1;
         max-width: 100%;
     }
-    
+
     .tour-content {
         max-width: 100%;
         text-align: center;
@@ -1680,15 +1816,16 @@ textarea.form-control {
         max-width: 500px;
         margin: 3rem auto 0;
     }
-    
+
     .tour-visual img {
         height: 360px;
     }
-    
-    .reservation-details, .reservation-form-container {
+
+    .reservation-details,
+    .reservation-form-container {
         padding: 2rem 1.5rem;
     }
-    
+
     .footer-top {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1718,19 +1855,24 @@ textarea.form-control {
     .error-logo-wrapper {
         margin-bottom: 1.25rem;
     }
+
     .error-logo-wrapper .logo-img {
         height: 28px;
     }
+
     .error-icon-illustration svg {
         width: 84px;
         height: 84px;
     }
+
     .error-badge {
         font-size: 5rem;
     }
+
     .error-title {
         font-size: 1.85rem;
     }
+
     .error-desc {
         font-size: 0.95rem;
         margin-bottom: 1.75rem;
@@ -1743,11 +1885,11 @@ textarea.form-control {
     .section {
         padding: 2rem 0;
     }
-    
+
     .section-title {
         font-size: 2.05rem;
     }
-    
+
     .hero {
         padding-top: 120px;
     }
@@ -1756,26 +1898,26 @@ textarea.form-control {
         font-size: 2.4rem;
         line-height: 1.2;
     }
-    
+
     .hero-description {
         font-size: 0.95rem;
         margin-bottom: 2rem;
     }
-    
+
     .hero-actions {
         flex-direction: column;
         gap: 0.75rem;
         width: 100%;
     }
-    
+
     .hero-actions .btn {
         width: 100%;
     }
-    
+
     .hero-floating-card {
         display: none;
     }
-    
+
     .btn {
         padding: 0.75rem 1.25rem;
         font-size: 0.85rem;
@@ -1785,16 +1927,17 @@ textarea.form-control {
     .nav-actions-mobile .btn {
         width: 100%;
     }
-    
-    .reservation-details, .reservation-form-container {
+
+    .reservation-details,
+    .reservation-form-container {
         padding: 1.5rem 1rem;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
-    
+
     .form-group {
         margin-bottom: 1.25rem;
     }
@@ -1805,21 +1948,21 @@ textarea.form-control {
         text-align: center;
         padding-top: 1.5rem;
     }
-    
+
     .footer-policy-links {
         justify-content: center;
         gap: 1.5rem;
     }
-    
+
     .testimonials-slider {
         height: 460px;
     }
-    
+
     .testimonial-text {
         font-size: 1.2rem;
         line-height: 1.5;
     }
-    
+
     .auth-card {
         padding: 2.5rem 1.5rem;
         border-radius: 12px;
@@ -1833,32 +1976,38 @@ textarea.form-control {
         top: 1.25rem;
         left: 1.25rem;
     }
-    
+
     .special-info {
         padding: 1.5rem;
     }
-    
+
     /* Error Page Smartphone Responsive Adjustments */
     .error-page {
         padding: 2rem 1rem;
     }
+
     .error-logo-wrapper {
         margin-bottom: 1rem;
     }
+
     .error-logo-wrapper .logo-img {
         height: 26px;
     }
+
     .error-icon-illustration svg {
         width: 76px;
         height: 76px;
     }
+
     .error-badge {
         font-size: 4.25rem;
     }
+
     .error-title {
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
     }
+
     .error-desc {
         font-size: 0.9rem;
         margin-bottom: 1.5rem;
