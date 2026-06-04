@@ -1,27 +1,44 @@
+// Immediate check to skip preloader if coming back from 404
+if (sessionStorage.getItem('skipPreloader') === 'true') {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.display = 'none';
+        loader.style.transition = 'none';
+        loader.classList.add('fade-out');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 0. Page Loader Fade Out on Load
     const loader = document.getElementById('page-loader');
     if (loader) {
-        // Hide loader once everything is loaded
-        const hideLoader = () => {
-            setTimeout(() => {
-                loader.classList.add('fade-out');
-            }, 350); // Elegant 350ms delay to make it snappier and suit the webpage
-        };
-
-        if (document.readyState === 'complete') {
-            hideLoader();
+        const skipPreloader = sessionStorage.getItem('skipPreloader') === 'true';
+        if (skipPreloader) {
+            loader.style.display = 'none';
+            loader.classList.add('fade-out');
+            sessionStorage.removeItem('skipPreloader');
         } else {
-            window.addEventListener('load', hideLoader);
-        }
+            // Hide loader once everything is loaded
+            const hideLoader = () => {
+                setTimeout(() => {
+                    loader.classList.add('fade-out');
+                }, 350); // Elegant 350ms delay to make it snappier and suit the webpage
+            };
 
-        // Safety fallback to prevent infinite loading screen
-        setTimeout(() => {
-            if (!loader.classList.contains('fade-out')) {
-                loader.classList.add('fade-out');
+            if (document.readyState === 'complete') {
+                hideLoader();
+            } else {
+                window.addEventListener('load', hideLoader);
             }
-        }, 350);
+
+            // Safety fallback to prevent infinite loading screen
+            setTimeout(() => {
+                if (!loader.classList.contains('fade-out')) {
+                    loader.classList.add('fade-out');
+                }
+            }, 350);
+        }
     }
 
     // 1. Initialize Animate On Scroll (AOS)
@@ -200,4 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1200);
         });
     });
+
+    // 8. 404 Page Back Navigation Handler
+    if (window.location.pathname.includes('404.html') || document.querySelector('.error-page')) {
+        // Push state to enable popstate interception on back/swipe back
+        try {
+            if (history.state?.page !== '404') {
+                history.pushState({ page: '404' }, null, window.location.href);
+            }
+        } catch (e) {
+            console.warn('History pushState failed:', e);
+        }
+
+        window.addEventListener('popstate', (event) => {
+            sessionStorage.setItem('skipPreloader', 'true');
+            window.location.replace('index.html');
+        });
+    }
 });
